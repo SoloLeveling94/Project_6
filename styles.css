@@ -1,0 +1,249 @@
+/* CSS VARIABLES */
+:root {
+    --primary: #141414;
+    --light: #F3F3F3;
+    --dark: #686868;
+    --red: red;
+}
+
+html, body {
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary);
+    color: var(--light);
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    line-height: 1.4;
+}
+h2 {
+    padding-top: 60px;
+    padding-bottom: 25px;
+    font-size: 30px;
+}
+
+
+/* header */
+header {
+    padding: 20px 20px 0 20px;
+    top: 0;
+    display: grid;
+    grid-gap:5px;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas:
+    "nt mn mn sb . . . ";
+    background-color: var(--primary);
+    background-image: linear-gradient(to right, white, black);
+    width: 100%;
+    margin-bottom: 0px;
+
+}
+
+.juststreamit-logo img {
+    height: 95px;
+    width: auto;
+    margin-left: 30px;
+}
+.juststreamit-logo {
+    grid-area: nt;
+    object-fit: cover;
+    width: 100px;
+    padding-left: 30px;
+}
+
+.main-nav {
+    grid-area: mn;
+    padding-top: 15px;
+}
+
+.main-nav a {
+    font-size: 35px;
+    color: var(--red);
+    text-decoration: none;
+    padding: 20px;
+}
+
+.main-nav a:hover {
+    color: var(--dark);
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  text-align: center;
+  color: var(--dark);
+  margin: 10px;
+  }
+/* Movie on top */
+#solo  {
+  height: 500px;
+  width: auto;
+  display: inline-flex;
+}
+.movie {
+    width: 1280px;
+    margin: 50px auto;
+}
+#bestmovie-img {
+    display: inline-block;
+}
+#bestmovie-img img {
+    height: 500px;
+    width: 400px;
+    border-radius: 15px;
+}
+
+#bestmovie-text {
+    display: inline-block;
+    margin-left: 30px;
+    vertical-align: top;
+    height: 400px;
+    font-size: 20px;
+}
+
+#info {
+    position: relative;
+    left: 432px;
+    bottom: 320px;
+    background: var(--red);
+    height: 40px;
+    width: 300px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    font-size:24px;
+    color: var(--light);
+}
+/* Carousel */
+.carousel-container  {
+      width: 1280px;
+      margin: 50px auto;
+      min-height: 300px;
+      position: relative;
+  }
+
+.carousel-container .carousel-inner {
+overflow: hidden;
+}
+.carousel-container .track {
+display: inline-flex;
+transition: transform 0.5s;
+}
+
+.carousel-container .card-container {
+width: 320px;
+height: 400px;
+flex-shrink: 0;
+
+padding-right: 20px;
+padding-left: 20px;
+box-sizing: border-box;
+}
+.carousel-container .card-container .card {
+width: 100%;
+height: 100%;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.card img {
+height: 100%;
+width: 100%;
+cursor: pointer;
+border-radius: 10px;
+}
+
+.nav button {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+border: 1px solid #aaa;
+position: absolute;
+bottom: 25%;
+transform: translateY(-50%);
+cursor: pointer;
+}
+.nav .prev {
+left: -30px;
+display: none;
+}
+
+.nav .prev.show {
+display: block;
+}
+.nav .next {
+right: -30px;
+}
+.nav .next.hide {
+display: none;
+}
+
+/*  Modal  */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+
+}
+
+
+.modal-content {
+  background-color: black;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid var(--dark);
+  width: 80%;
+}
+
+.modal-header {
+    text-align: center;
+    color: var(--red) ;
+}
+.modal-header h2{
+    padding-top: 0px;
+}
+/* The Close Button */
+#close {
+  color: var(--light);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#close:hover,
+#close:focus {
+  color: var(--dark);
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Modal Body */
+.modal-body  {
+  height: auto;
+  width: auto;
+  display: inline-flex;
+}
+
+.modal-image  {
+    display: inline-block;
+}
+.modal-image img {
+    border-radius: 10px;
+    height: 500px;
+}
+
+.modal-text {
+    display: inline-block;
+    margin-left: 30px;
+    vertical-align: top;
+    font-size: 20px;
+    color: var(--light);
+}

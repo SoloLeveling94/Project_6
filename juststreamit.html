@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>JustStreamIt</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="juststreamit-logo">
+            <a href="#home"><img src="https://user.oc-static.com/upload/2020/09/18/16004298163529_P5.png?raw=true" alt="Logo Image" /></a>
+        </div>
+        <nav class="main-nav">
+            <a href="#home">Accueil</a>
+            <a href="#categories">Catégories</a>
+        </nav>
+    </header>
+    <!-- END OF HEADER -->
+
+    <!-- MAIN CONTAINER -->
+    <div class="main-container">
+        <!-- Movie on top -->
+        <div class="movie">
+            <h2>Movie on top</h2>
+            <div id="solo">
+            </div>
+            <button id="info"><strong>Info</strong></button>
+        </div>
+         <!-- Display carousel1 -->
+        <div class="carousel-container" id="carousel1">
+          <h2>Films les mieux notés par Imdb</h2>
+            <div class="carousel-inner">
+                <div class="track" id="track1">
+                </div>
+            </div>
+            <div class="nav">
+                <button class="prev" id="prev1"><i class="material-icons">keyboard_arrow_left</i></button>
+                <button class="next" id="next1"><i class="material-icons">keyboard_arrow_right</i></button>
+            </div>
+        </div>
+         <!-- Display carousel2 -->
+        <div class="carousel-container" id="carousel2">
+          <h2>Meilleurs Films en 2020</h2>
+            <div class="carousel-inner">
+                <div class="track" id="track2">
+                </div>
+            </div>
+            <div class="nav">
+                <button class="prev" id="prev2"><i class="material-icons">keyboard_arrow_left</i></button>
+                <button class="next" id="next2"><i class="material-icons">keyboard_arrow_right</i></button>
+            </div>
+        </div>
+         <!-- Display carousel3 -->
+        <div class="carousel-container" id="carousel3">
+          <h2>Films les plus likés</h2>
+            <div class="carousel-inner">
+                <div class="track" id="track3">
+                </div>
+            </div>
+            <div class="nav">
+                <button class="prev" id="prev3"><i class="material-icons">keyboard_arrow_left</i></button>
+                <button class="next" id="next3"><i class="material-icons">keyboard_arrow_right</i></button>
+            </div>
+        </div>
+         <!-- Display carousel4 -->
+        <div class="carousel-container" id="carousel4">
+          <h2>Films avec Belmondo</h2>
+            <div class="carousel-inner">
+                <div class="track" id="track4">
+                </div>
+            </div>
+            <div class="nav">
+                <button class="prev" id="prev4"><i class="material-icons">keyboard_arrow_left</i></button>
+                <button class="next" id="next4"><i class="material-icons">keyboard_arrow_right</i></button>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL -->
+    <div class="modal" id="my-modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span id="close">&times;</span>
+            <div id="modal-inner">
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy 2021 JustStreamIt, Inc.</p>
+    </footer>
+</body> 
+     <script src="javascript.js">
+     </script>
+
+<!--<style>-->
+<!--@import url('https://fonts.googleapis.com/icon?family=Material+Icons');-->
+
+<!--.carousel-container {-->
+<!--    width: 1280px;-->
+<!--    margin: 50px auto;-->
+<!--    min-height: 300px;-->
+<!--    position: relative;-->
+<!--}-->
+
+<!--.carousel-container .carousel-inner {-->
+<!--    overflow: hidden;-->
+<!--}-->
+
+<!--.carousel-container .track {-->
+<!--    display: inline-flex;-->
+<!--    transition: transform 0.5s;-->
+
+<!--}-->
+
+<!--.carousel-container .card-container {-->
+<!--    width: 320px;-->
+<!--    height: 400px;-->
+<!--    flex-shrink: 0;-->
+<!--    padding-right: 20px;-->
+<!--    padding-left: 20px;-->
+<!--    box-sizing: border-box;-->
+<!--}-->
+
+<!--.carousel-container .card-container .card {-->
+<!--    width: 100%;-->
+<!--    height: 100%;-->
+<!--    border: 1px solid #ccc;-->
+<!--    box-sizing: border-box;-->
+<!--    border-radius: 10px;-->
+<!--}-->
+
+<!--.card img {-->
+<!--    height: 100%;-->
+<!--    width: 100%;-->
+<!--    cursor: pointer;-->
+<!--    border-radius: 10px;-->
+<!--}-->
+
+<!--.nav button {-->
+<!--    width: 50px;-->
+<!--    height: 50px;-->
+<!--    border-radius: 50%;-->
+<!--    border: 1px solid #aaa;-->
+<!--    position: absolute;-->
+<!--    top: 50%;-->
+<!--    transform: translateY(-50%);-->
+<!--    cursor: pointer;-->
+<!--}-->
+
+<!--.nav .prev {-->
+<!--    left: -30px;-->
+<!--    display: none;-->
+<!--}-->
+
+<!--.nav .prev.show {-->
+<!--    display: block;-->
+<!--}-->
+
+<!--.nav .next {-->
+<!--    right: -30px;-->
+<!--}-->
+
+<!--.nav .next.hide {-->
+<!--    display: none;-->
+<!--}-->
+<!--</style>-->
+
+</html>

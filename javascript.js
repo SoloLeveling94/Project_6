@@ -13,7 +13,7 @@ next1.addEventListener('click', ()=> {
     if(track1.offsetWidth - (index1 * carouselWidth1) < carouselWidth1) {
       next1.classList.add('hide');
      }
-    });
+});
 
 prev1.addEventListener('click', ()=> {
     index1--;
@@ -21,37 +21,37 @@ prev1.addEventListener('click', ()=> {
     if (index1 === 0) {
         prev1.classList.remove('show');
      }
-    //track1.style.transform = `translateX(-${index1 * carouselWidth1}px)`;
     track1.style.transform = `translateX(-${0}px)`;
-    });
+});
 
-    // function nextClick(prev, next, track, index, carouselWidth) {
-    //     index++;
-    //     console.log(index);
-    //     prev.classList.add('show');
-    //     // track.style.transform = `translateX(-${index * carouselWidth}px)`;
-    //     track.style.transform = `translateX(-${960}px)`;
-    //     if(track.offsetWidth - (index * carouselWidth) < carouselWidth) {
-    //       next.classList.add('hide');
-    //     }
-    //
-    // }
-    // function prevClick(prev, next, index, track, carouselWidth) {
-    //     index--;
-    //     console.log(index);
-    //     next.classList.remove('hide');
-    //     if (index === 0) {
-    //         prev.classList.remove('show');
-    //     }
-    //     track.style.transform = `translateX(-${index * carouselWidth}px)`;
-    //     track.style.transform = `translateX(-${0}px)`;
-    // }
-    // next1.addEventListener('click', function (){
-    //     nextClick(prev1, next1, track1, index1, carouselWidth1);
-    // });
-    // prev1.addEventListener('click', function () {
-    //     prevClick(prev1, next1, track1, index1, carouselWidth1);
-    // })
+// function nextClick(prev, next, track, index, carouselWidth) {
+//     index++;
+//     console.log(index);
+//     prev.classList.add('show');
+//     track.style.transform = `translateX(-${960}px)`;
+//     if(track.offsetWidth - (index * carouselWidth) < carouselWidth) {
+//       next.classList.add('hide');
+//     }
+//
+// }
+// function prevClick(prev, next, index, track, carouselWidth) {
+//     index--;
+//     // console.log(index);
+//     next.classList.remove('hide');
+//     if (index === 0) {
+//         prev.classList.remove('show');
+//     }
+//     console.log(carouselWidth);
+//     track.style.transform = `translateX(-${0}px)`;
+//     //track.style.transform = `translateX(-${100}px)`;
+// }
+//
+// next1.addEventListener('click', function (){
+//     nextClick(prev1, next1, track1, index1, carouselWidth1);
+// });
+// prev1.addEventListener('click', function () {
+//     prevClick(prev1, next1, track1, carouselWidth1);
+// })
 
 
 const prev2 = document.getElementById('prev2');
@@ -63,7 +63,7 @@ let index2 = 0;
 next2.addEventListener('click', () => {
     index2++;
     prev2.classList.add('show');
-    // track.style.transform = `translateX(-${index * carouselWidth}px)`;
+
     track2.style.transform = `translateX(-${960}px)`;
     if(track2.offsetWidth - (index2 * carouselWidth2) < carouselWidth2) {
         next2.classList.add('hide');
@@ -239,15 +239,16 @@ let modal = document.getElementById("my-modal");
 let close = document.getElementById("close");
 
 let btn = document.getElementById("info");
-let bestmovie = getFirstBestMovie();
-let modal_bestmovie = getInfo(1508669);
-let hide = modal.style.display = "none";
+let best_movie = getFirstBestMovie();
+
+let hidemodal = getInfo(1508669).then(
+    function(value) {document.getElementById('my-modal').style.display = "none";}
+);
+
 let movies_imdb = getImgSrc(url_moviesimdb1, url_moviesimdb2, "track1");
 let movies_2020 = getImgSrc(url_moviesthisyear1, url_moviesthisyear2, "track2");
 let movies_voted = getImgSrc(url_moviesvotes1, url_moviesvotes2, "track3");
 let movies_belmondo = getImgSrc(url_belmondo1, url_belmondo2, "track4");
-let best_movie = getFirstBestMovie();
-
 
 
 // close the modal

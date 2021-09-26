@@ -6,79 +6,11 @@ const track1 = document.getElementById('track1');
 const carouselWidth1 = document.getElementById("carousel1").offsetWidth;
 let index1 = 0;
 
-next1.addEventListener('click', ()=> {
-    index1++;
-    prev1.classList.add('show');
-    track1.style.transform = `translateX(-${960}px)`;
-    if(track1.offsetWidth - (index1 * carouselWidth1) < carouselWidth1) {
-      next1.classList.add('hide');
-     }
-});
-
-prev1.addEventListener('click', ()=> {
-    index1--;
-    next1.classList.remove('hide');
-    if (index1 === 0) {
-        prev1.classList.remove('show');
-     }
-    track1.style.transform = `translateX(-${0}px)`;
-});
-
-// function nextClick(prev, next, track, index, carouselWidth) {
-//     index++;
-//     console.log(index);
-//     prev.classList.add('show');
-//     track.style.transform = `translateX(-${960}px)`;
-//     if(track.offsetWidth - (index * carouselWidth) < carouselWidth) {
-//       next.classList.add('hide');
-//     }
-//
-// }
-// function prevClick(prev, next, index, track, carouselWidth) {
-//     index--;
-//     // console.log(index);
-//     next.classList.remove('hide');
-//     if (index === 0) {
-//         prev.classList.remove('show');
-//     }
-//     console.log(carouselWidth);
-//     track.style.transform = `translateX(-${0}px)`;
-//     //track.style.transform = `translateX(-${100}px)`;
-// }
-//
-// next1.addEventListener('click', function (){
-//     nextClick(prev1, next1, track1, index1, carouselWidth1);
-// });
-// prev1.addEventListener('click', function () {
-//     prevClick(prev1, next1, track1, carouselWidth1);
-// })
-
-
 const prev2 = document.getElementById('prev2');
 const next2 = document.getElementById('next2');
 const track2 = document.getElementById('track2');
 const carouselWidth2 = document.getElementById("carousel2").offsetWidth;
 let index2 = 0;
-
-next2.addEventListener('click', () => {
-    index2++;
-    prev2.classList.add('show');
-
-    track2.style.transform = `translateX(-${960}px)`;
-    if(track2.offsetWidth - (index2 * carouselWidth2) < carouselWidth2) {
-        next2.classList.add('hide');
-        }
-    });
-
-prev2.addEventListener('click', ()=> {
-    index2--;
-    next2.classList.remove('hide');
-    if (index2 === 0) {
-        prev2.classList.remove('show');
-        }
-    track2.style.transform = `translateX(-${index2 * carouselWidth2}px)`;
-    track2.style.transform = `translateX(-${0}px)`;
-});
 
 const prev3 = document.getElementById('prev3');
 const next3 = document.getElementById('next3');
@@ -86,50 +18,57 @@ const track3 = document.getElementById('track3');
 const carouselWidth3 = document.getElementById("carousel3").offsetWidth;
 let index3 = 0;
 
-next3.addEventListener('click', () => {
-    index3++;
-    prev3.classList.add('show');
-    // track.style.transform = `translateX(-${index * carouselWidth}px)`;
-    track3.style.transform = `translateX(-${960}px)`;
-    if(track3.offsetWidth - (index3 * carouselWidth3) < carouselWidth3) {
-        next3.classList.add('hide');
-        }
-    });
-
-prev3.addEventListener('click', ()=> {
-    index3--;
-    next3.classList.remove('hide');
-    if (index3 === 0) {
-        prev3.classList.remove('show');
-        }
-    track3.style.transform = `translateX(-${index3 * carouselWidth3}px)`;
-    track3.style.transform = `translateX(-${0}px)`;
-});
-
 const prev4 = document.getElementById('prev4');
 const next4 = document.getElementById('next4');
 const track4 = document.getElementById('track4');
 const carouselWidth4 = document.getElementById("carousel4").offsetWidth;
 let index4 = 0;
 
-next4.addEventListener('click', () => {
-    index4++;
-    prev4.classList.add('show');
-    // track.style.transform = `translateX(-${index * carouselWidth}px)`;
-    track4.style.transform = `translateX(-${960}px)`;
-    if(track4.offsetWidth - (index4 * carouselWidth4) < carouselWidth4) {
-        next4.classList.add('hide');
-        }
-    });
+function nextClick(prev, next, track, index, carouselWidth) {
+    index++;
+    prev.classList.add('show');
+    track.style.transform = `translateX(-${960}px)`;
+    if (track.offsetWidth - (index * carouselWidth) < carouselWidth) {
+        next.classList.add('hide');
+    }
+}
 
-prev4.addEventListener('click', ()=> {
-    index4--;
-    next4.classList.remove('hide');
-    if (index4 === 0) {
-        prev4.classList.remove('show');
-        }
-    track4.style.transform = `translateX(-${index4 * carouselWidth4}px)`;
-    track4.style.transform = `translateX(-${0}px)`;
+function prevClick(prev, next, track, index, carouselWidth) {
+    index--;
+    next.classList.remove('hide');
+    if (index <= 0) {
+        prev.classList.remove('show');
+    }
+    track.style.transform = `translateX(-${index * carouselWidth}px)`;
+    track.style.transform = `translateX(-${0}px)`;
+}
+
+next1.addEventListener('click', function (){
+    nextClick(prev1, next1, track1, index1, carouselWidth1);
+});
+prev1.addEventListener('click', function () {
+    prevClick(prev1, next1, track1, index1, carouselWidth1);
+});
+
+next2.addEventListener('click', function (){
+    nextClick(prev2, next2, track2, index2, carouselWidth2);
+});
+prev2.addEventListener('click', function () {
+    prevClick(prev2, next2, track2, index2, carouselWidth2);
+});
+
+next3.addEventListener('click', function (){
+    nextClick(prev3, next3, track3, index3, carouselWidth3);
+});
+prev3.addEventListener('click', function () {
+    prevClick(prev3, next3, track3, index3, carouselWidth3);
+});
+
+next4.addEventListener('click', function (){
+    nextClick(prev4, next4, track4, index4, carouselWidth4);
+});
+prev4.addEventListener('click', function () {
+    prevClick(prev4, next4, track4, index4, carouselWidth4);
 });
 
 
@@ -199,7 +138,6 @@ async function getInfo(id) {
         let url = "http://localhost:8000/api/v1/titles/" + id.toString();
         await fetch(url).then(response => response.json())
             .then(data => {
-                console.log(data);
                 let modal = '';
                 modal += `
                 <div class ="modal-header">
@@ -219,7 +157,7 @@ async function getInfo(id) {
                         <p><strong>Pays :</strong> ${data.countries}</p>
                         <p><strong>Durée du film :</strong> ${data.duration} mn</p>
                         <p><strong>Recettes :</strong> ${data.worldwide_gross_income} $</p>
-                        <p><strong>Description :</strong> ${data.description}</p>
+                        <p><strong>Description :</strong> ${data.long_description}</p>
                     </div>
                 </div>`
 
@@ -242,7 +180,9 @@ let btn = document.getElementById("info");
 let best_movie = getFirstBestMovie();
 
 let hidemodal = getInfo(1508669).then(
-    function(value) {document.getElementById('my-modal').style.display = "none";}
+    function() {
+        document.getElementById('my-modal').style.display = "none";
+    }
 );
 
 let movies_imdb = getImgSrc(url_moviesimdb1, url_moviesimdb2, "track1");
@@ -256,6 +196,7 @@ close.onclick = function() {
   modal.style.display = "none";
 }
 
+// open principal modal with button
 btn.addEventListener('click', function () {
     getInfo(1508669);
 })

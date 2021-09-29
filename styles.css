@@ -31,8 +31,7 @@ header {
     display: grid;
     grid-gap:5px;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-areas:
-    "nt mn mn sb . . . ";
+    grid-template-areas:"logo mn . . . ";
     background-color: var(--primary);
     background-image: linear-gradient(to right, white, black);
     width: 100%;
@@ -46,7 +45,7 @@ header {
     margin-left: 30px;
 }
 .juststreamit-logo {
-    grid-area: nt;
+    grid-area: logo;
     object-fit: cover;
     width: 100px;
     padding-left: 30px;
@@ -61,20 +60,19 @@ header {
     font-size: 35px;
     color: var(--red);
     text-decoration: none;
-    padding: 20px;
+    padding-right: 50px;
 }
-
 .main-nav a:hover {
     color: var(--dark);
 }
 
 /* Footer */
 footer {
-  padding: 20px;
-  text-align: center;
-  color: var(--dark);
-  margin: 10px;
-  }
+    padding: 20px;
+    text-align: center;
+    color: var(--dark);
+    margin: 10px;
+}
 /* Movie on top */
 #solo  {
   height: 500px;
@@ -117,90 +115,89 @@ footer {
 }
 /* Carousel */
 .carousel-container  {
-      width: 1280px;
-      margin: 50px auto;
-      min-height: 300px;
-      position: relative;
-  }
+    width: 1280px;
+    margin: 50px auto;
+    min-height: 300px;
+    position: relative;
+}
 
 .carousel-container .carousel-inner {
-overflow: hidden;
+    overflow: hidden;
 }
 .carousel-container .track {
-display: inline-flex;
-transition: transform 0.5s;
+    display: inline-flex;
+    transition: transform 0.5s;
 }
 
 .carousel-container .card-container {
-width: 320px;
-height: 400px;
-flex-shrink: 0;
-
-padding-right: 20px;
-padding-left: 20px;
-box-sizing: border-box;
+    width: 320px;
+    height: 400px;
+    flex-shrink: 0;
+    padding-right: 20px;
+    padding-left: 20px;
+    box-sizing: border-box;
 }
 .carousel-container .card-container .card {
-width: 100%;
-height: 100%;
-box-sizing: border-box;
-border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
 }
 
 .card img {
-height: 100%;
-width: 100%;
-cursor: pointer;
-border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
 }
 
 .nav button {
-width: 50px;
-height: 50px;
-border-radius: 50%;
-border: 1px solid #aaa;
-position: absolute;
-bottom: 25%;
-transform: translateY(-50%);
-cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #aaa;
+    position: absolute;
+    bottom: 25%;
+    transform: translateY(-50%);
+    cursor: pointer;
 }
 .nav .prev {
-left: -30px;
-display: none;
+    left: -30px;
+    display: none;
 }
 
 .nav .prev.show {
-display: block;
+    display: block;
 }
 .nav .next {
-right: -30px;
+    right: -30px;
 }
 .nav .next.hide {
-display: none;
+    display: none;
 }
 
 /*  Modal  */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
 
 
 .modal-content {
-  background-color: black;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid var(--dark);
-  width: 80%;
+    background-color: black;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid var(--dark);
+    width: 80%;
 }
 
 .modal-header {
@@ -212,23 +209,23 @@ display: none;
 }
 /* The Close Button */
 #close {
-  color: var(--light);
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    color: var(--light);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 #close:hover,
 #close:focus {
-  color: var(--dark);
-  text-decoration: none;
-  cursor: pointer;
+    color: var(--dark);
+    text-decoration: none;
+    cursor: pointer;
 }
 /* Modal Body */
 .modal-body  {
-  height: auto;
-  width: auto;
-  display: inline-flex;
+    height: auto;
+    width: auto;
+    display: inline-flex;
 }
 
 .modal-image  {
@@ -245,5 +242,34 @@ display: none;
     vertical-align: top;
     color: var(--light);
 }
+.menu,
+.menu-list {
+    display: inline-block;
+}
+.menu {
+    vertical-align: top;
+}
 
+nav > ul {
+    display: flex;
+    text-align: center;
+}
 
+ul,
+li {
+    list-style-type: none;
+}
+
+.sub-menu {
+    width: 100%;
+    text-align: left;
+    overflow: hidden;
+    max-height: 0;
+}
+.sub-menu a {
+    font-size: 25px;
+}
+
+.menu-list:hover > .sub-menu {
+    overflow: visible;
+}

@@ -82,6 +82,8 @@ const url_moviesvotes1 = 'http://localhost:8000/api/v1/titles/?sort_by=-votes';
 const url_moviesvotes2 = 'http://localhost:8000/api/v1/titles/?sort_by=-votes&page=2';
 const url_belmondo1 = 'http://localhost:8000/api/v1/titles/?actor_contains=belmondo&sort_by=-votes';
 const url_belmondo2 = 'http://localhost:8000/api/v1/titles/?actor_contains=belmondo&page=2&sort_by=-votes';
+const url_income = 'http://localhost:8000/api/v1/titles/?sort_by=-worldwide_gross_income';
+const url_income2 = 'http://localhost:8000/api/v1/titles/?sort_by=-worldwide_gross_income&page=2';
 
 async function getFirstBestMovie() {
     try {
@@ -138,6 +140,12 @@ async function getInfo(id) {
         let url = "http://localhost:8000/api/v1/titles/" + id.toString();
         await fetch(url).then(response => response.json())
             .then(data => {
+                console.log(data);
+                if (data.worldwide_gross_income == null) {
+                var income = "non communiqué";
+            } else {
+                    var income = data.worldwide_gross_income.toLocaleString(undefined) + " $";
+                }
                 let modal = '';
                 modal += `
                 <div class ="modal-header">
@@ -156,7 +164,7 @@ async function getInfo(id) {
                         <p><strong>Acteurs :</strong> ${data.actors}</p>
                         <p><strong>Pays :</strong> ${data.countries}</p>
                         <p><strong>Durée du film :</strong> ${data.duration} mn</p>
-                        <p><strong>Recettes :</strong> ${data.worldwide_gross_income} $</p>
+                        <p><strong>Recettes :</strong> ${income} </p>
                         <p><strong>Description :</strong> ${data.long_description}</p>
                     </div>
                 </div>`
